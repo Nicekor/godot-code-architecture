@@ -13,8 +13,8 @@ dest_files=[ "res://.import/stallRed.glb-0d53fff22013d460da46e981b7978cb8.scn" ]
 
 nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
-nodes/root_scale=1.0
-nodes/custom_script=""
+nodes/root_scale=2.25
+nodes/custom_script="res://ImportFantasyTown.cs"
 nodes/storage=0
 nodes/use_legacy_names=false
 materials/location=1
