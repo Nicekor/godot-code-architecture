@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource( 2 )
-avatarTexture = ExtResource( 1 )
-dialogueSlides = PoolStringArray( "Welcome to the bazaar!", "I hope you came hungry, because there\'s a lot of free food.", "Just make sure to choose the right food.", "Ha ha ha ha" )
+AvatarTexture = ExtResource( 1 )
+DialogueSlides = PoolStringArray( "Welcome to the bazaar!", "I hope you came hungry, because there\'s a lot of free food.", "Just make sure to choose the right food.", "Ha ha ha ha ha" )
