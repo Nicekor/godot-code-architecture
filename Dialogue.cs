@@ -4,10 +4,8 @@ using System;
 public class Dialogue : Resource
 {
     [Export]
-    public Texture avatarTexture;
+    public Texture AvatarTexture;
 
     [Export(PropertyHint.MultilineText)]
-    public string[] dialogueSlides;
-
-    
+    public string[] DialogueSlides;
 }

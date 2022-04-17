@@ -4,9 +4,9 @@ using System;
 public class Player : KinematicBody
 {
     [Export]
-    private float mouseSensitivity = 0.08f;
+    private float _mouseSensitivity = 0.08f;
     [Export]
-    private float moveSpeed = 3f;
+    private float _moveSpeed = 3f;
 
     public override void _Ready()
     {
@@ -15,32 +15,32 @@ public class Player : KinematicBody
 
     public override void _Input(InputEvent inputEvent)
     {
-        aim(inputEvent);
+        Aim(inputEvent);
     }
 
     // same as _process except that it's called consistently on the tick inside of the pysics engine which is separate from the game engine 
     public override void _PhysicsProcess(float delta)
     {
         base._PhysicsProcess(delta);
-        movement();
+        Movement();
     }
 
-    private void aim(InputEvent evt)
+    private void Aim(InputEvent evt)
     {
         InputEventMouseMotion mouseMotion = evt as InputEventMouseMotion;
         if (mouseMotion != null)
         {
             Camera playerCamera = this.GetNode<Camera>("Camera");
-            this.RotationDegrees -= new Vector3(0, mouseMotion.Relative.x, 0) * mouseSensitivity;
+            this.RotationDegrees -= new Vector3(0, mouseMotion.Relative.x, 0) * _mouseSensitivity;
 
             float currentTilt = playerCamera.RotationDegrees.x;
-            currentTilt -= mouseMotion.Relative.y * mouseSensitivity;
+            currentTilt -= mouseMotion.Relative.y * _mouseSensitivity;
 
             playerCamera.RotationDegrees = new Vector3(Mathf.Clamp(currentTilt, -90, 90), 0, 0);
         }
     }
 
-    private void movement()
+    private void Movement()
     {
         Vector3 movementVector = new Vector3();
         Vector3 forwardMovement = new Vector3();
@@ -66,7 +66,7 @@ public class Player : KinematicBody
 
         movementVector = (forwardMovement + sidewaysMovement).Normalized();
 
-        MoveAndSlide(movementVector * moveSpeed);
+        MoveAndSlide(movementVector * _moveSpeed);
     }
 
 }
