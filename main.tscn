@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.cs" type="Script" id=1]
 [ext_resource path="res://Fantasy town/stallRed.glb" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Food kit/beet.glb" type="PackedScene" id=4]
 [ext_resource path="res://Blocky characters/Models/Non-rigged/glTF/advancedCharacter.gltf" type="PackedScene" id=5]
 [ext_resource path="res://Blocky characters/Skins/Advanced/skin_adventurer.png" type="Texture" id=6]
+[ext_resource path="res://Dialogues/intro.tres" type="Resource" id=7]
 [ext_resource path="res://PoetsenOne-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://DialogueManager.cs" type="Script" id=9]
 
@@ -70,7 +71,9 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-dialogTextPath = NodePath("TextBackground/DialogText")
+_dialogTextPath = NodePath("TextBackground/DialogText")
+_avatarPath = NodePath("Avatar")
+_currentDialogueTres = ExtResource( 7 )
 
 [node name="Avatar" type="TextureRect" parent="CanvasLayer/DialogUI"]
 anchor_top = 1.0
