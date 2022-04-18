@@ -15,9 +15,9 @@ __meta__ = {
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 8.02472e-16, 1.96257e-15, -2.02365e-15, 0.0849612, 0.996384, 6.32828e-16, -0.996384, 0.0849612, 0, 0.64193, 0.0411098 )
 visible = false
-light_energy = 2.27
+light_energy = 5.09
 spot_range = 1.7
-spot_attenuation = 1.23
+spot_attenuation = 0.64
 spot_angle = 13.3
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
