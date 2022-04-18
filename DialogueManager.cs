@@ -13,11 +13,15 @@ public class DialogueManager : Control
     private Label _dialogText;
     private TextureRect _avatar;
     private int _currentSlideIndex = 0;
+    private GameEvents _gameEvents;
 
     public override void _Ready()
     {
         _dialogText = GetNode<Label>(_dialogTextPath);
         _avatar = GetNode<TextureRect>(_avatarPath);
+        // todo: this breaks if the fs is changed, should I just attach a reference of the script on the editor(?)
+        _gameEvents = GetNode<GameEvents>("/root/GameEvents");
+        _gameEvents.Connect(nameof(GameEvents.DialogInitiated), this, nameof(_OnDialogInitiated));
 
         if (_currentDialogueTres is Dialogue dialogue)
         {
@@ -47,5 +51,14 @@ public class DialogueManager : Control
         {
             _dialogText.Text = dialogue.DialogueSlides[_currentSlideIndex];
         }
+    }
+
+    private void _OnDialogInitiated(Dialogue dialogue)
+    {
+        _currentDialogueTres = dialogue;
+        this.Visible = true;
+        _currentSlideIndex = 0;
+        _avatar.Texture = dialogue.AvatarTexture;
+        ShowSlide();
     }
 }
