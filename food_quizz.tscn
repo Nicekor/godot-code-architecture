@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Fantasy town/stallRed.glb" type="PackedScene" id=1]
+[ext_resource path="res://Food kit/apple.glb" type="PackedScene" id=2]
+[ext_resource path="res://Blocky characters/Models/Non-rigged/glTF/advancedCharacter.gltf" type="PackedScene" id=3]
+[ext_resource path="res://Blocky characters/Skins/Advanced/skin_adventurer.png" type="Texture" id=4]
+[ext_resource path="res://FoodQuizz.cs" type="Script" id=5]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1, 0.438755, 0.51271 )
+
+[node name="FoodQuiz" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23166, 0.163149, -3.048 )
+script = ExtResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="stallRed" parent="." instance=ExtResource( 1 )]
+transform = Transform( -9.83506e-08, 0, 2.25, 0, 2.25, 0, -2.25, 0, -9.83506e-08, 0, 0, 0 )
+
+[node name="AdventurerNPC" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0922444, 0, 0.0386131, 0, 0.1, 0, -0.0386131, 0, 0.0922444, -1.78681, 0.088886, 0.38229 )
+
+[node name="Body1" parent="AdventurerNPC" index="0"]
+material/0 = SubResource( 10 )
+
+[node name="Head1" parent="AdventurerNPC" index="1"]
+material/0 = SubResource( 10 )
+
+[node name="ArmLeft1" parent="AdventurerNPC" index="2"]
+material/0 = SubResource( 10 )
+
+[node name="ArmRight1" parent="AdventurerNPC" index="3"]
+material/0 = SubResource( 10 )
+
+[node name="LegLeft1" parent="AdventurerNPC" index="4"]
+material/0 = SubResource( 10 )
+
+[node name="LegRight1" parent="AdventurerNPC" index="5"]
+material/0 = SubResource( 10 )
+
+[node name="DialogTrigger" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.357081 )
+
+[node name="CollisionShape" type="CollisionShape" parent="DialogTrigger"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.273689, 0.953038 )
+shape = SubResource( 9 )
+
+[node name="Food" type="Spatial" parent="."]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -0.426784, 1.22373, 0.0960352 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="apple" parent="Food" instance=ExtResource( 2 )]
+
+[node name="SpotLight" type="SpotLight" parent="Food"]
+
+[connection signal="body_entered" from="DialogTrigger" to="." method="_OnDialogTriggerBodyEntered"]
+
+[editable path="AdventurerNPC"]
