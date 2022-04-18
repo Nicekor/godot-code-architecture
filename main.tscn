@@ -116,11 +116,20 @@ shadow_enabled = true
 [node name="FoodQuiz" parent="." instance=ExtResource( 2 )]
 _dialogue = ExtResource( 3 )
 
+[node name="Food" parent="FoodQuiz" index="3"]
+FoodName = "Apple"
+
 [node name="apple" parent="FoodQuiz/Food" index="2" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0798174, 0 )
 
+[node name="Food2" parent="FoodQuiz" index="4"]
+FoodName = "Grapes"
+
 [node name="grapes" parent="FoodQuiz/Food2" index="2" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.198763, 0 )
+
+[node name="Food3" parent="FoodQuiz" index="5"]
+FoodName = "Orange"
 
 [node name="orange" parent="FoodQuiz/Food3" index="2" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0691007, 0 )

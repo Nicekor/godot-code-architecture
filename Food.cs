@@ -3,6 +3,8 @@ using System;
 
 public class Food : Area
 {
+    [Export]
+    public string FoodName;
     private GameEvents _gameEvents;
     private SpotLight spotLight;
 
