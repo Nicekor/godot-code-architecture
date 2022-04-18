@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.cs" type="Script" id=1]
 [ext_resource path="res://food_quizz.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Dialogues/fruit_chat.tres" type="Resource" id=3]
+[ext_resource path="res://Food kit/grapes.glb" type="PackedScene" id=4]
+[ext_resource path="res://Food kit/apple.glb" type="PackedScene" id=5]
+[ext_resource path="res://Food kit/orange.glb" type="PackedScene" id=6]
 [ext_resource path="res://Dialogues/intro.tres" type="Resource" id=7]
 [ext_resource path="res://PoetsenOne-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://DialogueManager.cs" type="Script" id=9]
@@ -112,6 +115,15 @@ shadow_enabled = true
 
 [node name="FoodQuiz" parent="." instance=ExtResource( 2 )]
 _dialogue = ExtResource( 3 )
+
+[node name="apple" parent="FoodQuiz/Food" index="2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0798174, 0 )
+
+[node name="grapes" parent="FoodQuiz/Food2" index="2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.198763, 0 )
+
+[node name="orange" parent="FoodQuiz/Food3" index="2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0691007, 0 )
 
 [editable path="FoodQuiz"]
 [editable path="FoodQuiz/AdventurerNPC"]
