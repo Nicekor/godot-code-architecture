@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fantasy town/stallRed.glb" type="PackedScene" id=1]
-[ext_resource path="res://Food kit/apple.glb" type="PackedScene" id=2]
+[ext_resource path="res://food.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Blocky characters/Models/Non-rigged/glTF/advancedCharacter.gltf" type="PackedScene" id=3]
 [ext_resource path="res://Blocky characters/Skins/Advanced/skin_adventurer.png" type="Texture" id=4]
 [ext_resource path="res://FoodQuizz.cs" type="Script" id=5]
@@ -50,15 +50,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.357081 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.273689, 0.953038 )
 shape = SubResource( 9 )
 
-[node name="Food" type="Spatial" parent="."]
-transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -0.426784, 1.22373, 0.0960352 )
-__meta__ = {
-"_editor_description_": ""
-}
+[node name="Food" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -0.613826, 1.41363, 0.0960352 )
 
-[node name="apple" parent="Food" instance=ExtResource( 2 )]
+[node name="Food2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0.023, 1.4139, 0.0699999 )
 
-[node name="SpotLight" type="SpotLight" parent="Food"]
+[node name="Food3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0.632, 1.4139, 0.0610001 )
 
 [connection signal="body_entered" from="DialogTrigger" to="." method="_OnDialogTriggerBodyEntered"]
 
