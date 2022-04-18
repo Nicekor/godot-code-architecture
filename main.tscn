@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player.cs" type="Script" id=1]
 [ext_resource path="res://food_quizz.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://PoetsenOne-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://DialogueManager.cs" type="Script" id=9]
 [ext_resource path="res://FoodChooserRay.cs" type="Script" id=10]
+[ext_resource path="res://FoodLabel.cs" type="Script" id=11]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 10, 10 )
@@ -21,6 +22,10 @@ radius = 0.33
 radius = 0.33
 
 [sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=9]
 size = 20
 font_data = ExtResource( 8 )
 
@@ -108,6 +113,20 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "Sample dialog text"
 valign = 1
+
+[node name="FoodLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+margin_bottom = 60.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Food label"
+align = 1
+valign = 1
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.877129, 0.480254, 0, -0.480254, 0.877129, 0, 4.15866, 6.05802 )
