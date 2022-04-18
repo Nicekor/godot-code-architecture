@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player.cs" type="Script" id=1]
 [ext_resource path="res://Fantasy town/stallRed.glb" type="PackedScene" id=2]
-[ext_resource path="res://Food kit/apple.glb" type="PackedScene" id=3]
+[ext_resource path="res://Dialogues/fruit_chat.tres" type="Resource" id=3]
 [ext_resource path="res://Food kit/beet.glb" type="PackedScene" id=4]
 [ext_resource path="res://Blocky characters/Models/Non-rigged/glTF/advancedCharacter.gltf" type="PackedScene" id=5]
 [ext_resource path="res://Blocky characters/Skins/Advanced/skin_adventurer.png" type="Texture" id=6]
