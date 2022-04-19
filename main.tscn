@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player.cs" type="Script" id=1]
 [ext_resource path="res://food_quizz.tscn" type="PackedScene" id=2]
@@ -11,6 +11,12 @@
 [ext_resource path="res://DialogueManager.cs" type="Script" id=9]
 [ext_resource path="res://FoodChooserRay.cs" type="Script" id=10]
 [ext_resource path="res://FoodLabel.cs" type="Script" id=11]
+[ext_resource path="res://Blocky characters/Skins/Advanced/skin_woman.png" type="Texture" id=12]
+[ext_resource path="res://Blocky characters/Skins/Advanced/skin_adventurer.png" type="Texture" id=13]
+[ext_resource path="res://Food kit/donutChocolate.glb" type="PackedScene" id=14]
+[ext_resource path="res://Food kit/donutSprinkles.glb" type="PackedScene" id=15]
+[ext_resource path="res://Food kit/donut.glb" type="PackedScene" id=16]
+[ext_resource path="res://Dialogues/donut_chat.tres" type="Resource" id=17]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 10, 10 )
@@ -28,6 +34,12 @@ font_data = ExtResource( 8 )
 [sub_resource type="DynamicFont" id=9]
 size = 20
 font_data = ExtResource( 8 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 13 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 12 )
 
 [node name="Main" type="Spatial"]
 
@@ -135,6 +147,24 @@ shadow_enabled = true
 [node name="FoodQuiz" parent="." instance=ExtResource( 2 )]
 _dialogue = ExtResource( 3 )
 
+[node name="Body1" parent="FoodQuiz/AdventurerNPC" index="0"]
+material/0 = SubResource( 10 )
+
+[node name="Head1" parent="FoodQuiz/AdventurerNPC" index="1"]
+material/0 = SubResource( 10 )
+
+[node name="ArmLeft1" parent="FoodQuiz/AdventurerNPC" index="2"]
+material/0 = SubResource( 10 )
+
+[node name="ArmRight1" parent="FoodQuiz/AdventurerNPC" index="3"]
+material/0 = SubResource( 10 )
+
+[node name="LegLeft1" parent="FoodQuiz/AdventurerNPC" index="4"]
+material/0 = SubResource( 10 )
+
+[node name="LegRight1" parent="FoodQuiz/AdventurerNPC" index="5"]
+material/0 = SubResource( 10 )
+
 [node name="Food" parent="FoodQuiz" index="3"]
 FoodName = "Apple"
 _foodMeshPath = NodePath("apple")
@@ -156,5 +186,50 @@ _foodMeshPath = NodePath("orange")
 [node name="orange" parent="FoodQuiz/Food3" index="2" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0691007, 0 )
 
+[node name="FoodQuiz2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.792556, 0, 0.609799, 0, 1, 0, -0.609799, 0, 0.792556, -1.49853, 0.0503193, -1.38139 )
+_dialogue = ExtResource( 17 )
+
+[node name="Body1" parent="FoodQuiz2/AdventurerNPC" index="0"]
+material/0 = SubResource( 11 )
+
+[node name="Head1" parent="FoodQuiz2/AdventurerNPC" index="1"]
+material/0 = SubResource( 11 )
+
+[node name="ArmLeft1" parent="FoodQuiz2/AdventurerNPC" index="2"]
+material/0 = SubResource( 11 )
+
+[node name="ArmRight1" parent="FoodQuiz2/AdventurerNPC" index="3"]
+material/0 = SubResource( 11 )
+
+[node name="LegLeft1" parent="FoodQuiz2/AdventurerNPC" index="4"]
+material/0 = SubResource( 11 )
+
+[node name="LegRight1" parent="FoodQuiz2/AdventurerNPC" index="5"]
+material/0 = SubResource( 11 )
+
+[node name="Food" parent="FoodQuiz2" index="3"]
+FoodName = "Donut"
+_foodMeshPath = NodePath("donut")
+
+[node name="donut" parent="FoodQuiz2/Food" index="2" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 0.766044, -0.642788, 0, 0.642788, 0.766044, 0, 0, 0 )
+
+[node name="Food2" parent="FoodQuiz2" index="4"]
+FoodName = "Cocoa Donut"
+_foodMeshPath = NodePath("donutChocolate")
+
+[node name="donutChocolate" parent="FoodQuiz2/Food2" index="2" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 0.766044, -0.642788, 0, 0.642788, 0.766044, 0, 0, 0 )
+
+[node name="Food3" parent="FoodQuiz2" index="5"]
+FoodName = "Sprinkle Donut"
+_foodMeshPath = NodePath("donutSprinkles")
+
+[node name="donutSprinkles" parent="FoodQuiz2/Food3" index="2" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 0.766044, -0.642788, 0, 0.642788, 0.766044, 0, 0, 0 )
+
 [editable path="FoodQuiz"]
 [editable path="FoodQuiz/AdventurerNPC"]
+[editable path="FoodQuiz2"]
+[editable path="FoodQuiz2/AdventurerNPC"]

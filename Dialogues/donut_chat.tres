@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Blocky characters/Faces/face_woman.png" type="Texture" id=1]
+[ext_resource path="res://Dialogue.cs" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+AvatarTexture = ExtResource( 1 )
+DialogueSlides = PoolStringArray( "Well hellooooo", "I made these donuts all by myself", "They\'re terrible!", "Except for one of them. Yummy!" )
